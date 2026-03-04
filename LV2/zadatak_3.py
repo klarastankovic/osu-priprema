@@ -2,14 +2,14 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 img = plt.imread("road.jpg")
-img = img[:, :, 0].copy()
+img = img[:, :, 0]
 
 fig, axes = plt.subplots(1, 5, figsize=(20, 4))
 axes[0].imshow(img, cmap="gray")
 axes[0].set_title("Originalna slika")
 
 # a) Posvijetliti sliku
-brightened_img = np.clip(img + 50, 0, 255).astype(np.uint8)
+brightened_img = np.clip(img.astype(np.int32) + 100, 0, 255).astype(np.uint8)
 axes[1].imshow(brightened_img, cmap="gray")
 axes[1].set_title('Posvijetljena slika')
 
@@ -25,7 +25,7 @@ axes[3].imshow(rotated_img, cmap="gray")
 axes[3].set_title('Rotacija 90°')
 
 # d) Zrcaliti sliku
-mirrored_img = np.fliplr(img)
+mirrored_img = np.fliplr(img) #img[::1, ::-1]
 axes[4].imshow(mirrored_img, cmap="gray")
 axes[4].set_title('Zrcaljena slika')
 

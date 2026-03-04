@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-data = np.genfromtxt('data.csv', delimiter=',', skip_header=1)
+data = np.loadtxt("data.csv", delimiter=",", skiprows=1) #.genfromtxt('data.csv', delimiter=',', skip_header=1)
 
 # a) Na koliko osoba su izvrsena mjerenja?
 broj_osoba = data.shape[0]
