@@ -1,0 +1,105 @@
+a) Koliko mjerenja sadrži DataFrame? Kojeg je tipa svaka veličina? Postoje li izostale ili
+duplicirane vrijednosti? Obrišite ih ako postoje. Kategoričke veličine konvertirajte u tip
+category.
+Broj mjerenja: 2212 (12 stupaca)
+Tipovi podataka: numerički stupci su float64/int64, a kategorički (Make, Model, Vehicle class, Transmission, Fuel Type) su str (konvertirani u tip category)
+Nema izostalih niti dupliciranih vrijednosti.
+
+
+b) Koja tri automobila ima najveću odnosno najmanju gradsku potrošnju? Ispišite u terminal:
+ime proizvođača, model vozila i kolika je gradska potrošnja.
+3 automobila s najvećom gradskom potrošnjom:
+             Make                 Model  Fuel Consumption City (L/100km)
+1384  Lamborghini  Aventador Sian Coupe                             28.3
+1726      Bugatti    Chiron Super Sport                             30.3
+1070      Bugatti      Chiron Pur Sport                             30.3
+
+3 automobila s najmanjom gradskom potrošnjom:
+         Make       Model  Fuel Consumption City (L/100km)
+1329  Hyundai  IONIQ Blue                              4.0
+464   Hyundai       IONIQ                              4.2
+465   Hyundai  IONIQ Blue                              4.2
+
+
+c) Koliko vozila ima veličinu motora između 2.5 i 3.5 L? Kolika je prosječna C02 emisija
+plinova za ova vozila?
+Broj automobila s motorom između 2.5L i 3.5L: 714
+Procječna C02 emisija za ova vozila: 254.75 g/km
+
+
+d) Koliko mjerenja se odnosi na vozila proizvođača Audi? Kolika je prosječna emisija C02
+plinova automobila proizvođača Audi koji imaju 4 cilindara?
+Broj mjerila za Audi: 118
+Prosječna CO2 emisija Audi vozila sa 4 cilindra: 215.91 g/km
+
+
+e) Koliko je vozila s 4,6,8... cilindara? Kolika je prosječna emisija C02 plinova s obzirom na
+broj cilindara?
+Broj vozila po broju cilindara (>4): (dominiraju s 4 i 6 cilindara)
+4: 906
+5: 3
+6: 672
+8: 516
+10: 22
+12: 45
+16: 4
+
+Prosječna CO2 emisija po broju cilindara (>4): (monotono raste s brojem cilindara)
+3: 184.55 g/km
+4: 212.58 g/km
+5: 238.67 g/km
+6: 269.24 g/km
+8: 323.33 g/km
+10: 357.18 g/km
+12: 415.67 g/km
+16: 568.75 g/km
+
+
+f) Kolika je prosječna gradska potrošnja u slučaju vozila koja koriste dizel, a kolika za vozila
+koja koriste regularni benzin? Koliko iznose medijalne vrijednosti?
+Broj dizel vozila:  58
+Broj benzinskih vozila:  984
+Prosječna gradska potrošnja
+Dizel: 11.31 L/100km
+Benzin: 11.50 L/100km
+Medijalna gradska potrošnja
+Dizel: 11.30 L/100km
+Benzin: 11.50 L/100km
+Dizel i benzin imaju gotovo identičnu prosječnu potrošnju, ali je dizel vozila znatno manje (više od 10 puta manje).
+
+
+g) Koje vozilo s 4 cilindra koje koristi dizelski motor ima najveću gradsku potrošnju goriva?
+Dizel vozilo s 4 cilindra i najvećom gradskom potrošnjom:
+Make                                      Chevrolet
+Model                              Colorado ZR2 4WD
+Fuel Consumption City (L/100km)                13.3
+
+
+h) Koliko ima vozila ima ručni tip mjenjača (bez obzira na broj brzina)?
+Broj vozila s ručnim mjenjačem:  192
+
+
+i) Izračunajte korelaciju između numeričkih veličina. Komentirajte dobiveni rezultat.
+1. POTROŠNJA GORIVA (međusobna korelacija > 0.97):
+   Gradska, izvangradska i kombinirana potrošnja su iznimno visoko međusobno
+   korelirane. Ovo je logično jer sve tri mjere istu fizikalnu veličinu
+   (potrošnju goriva) samo u različitim uvjetima vožnje.
+
+2. CO2 EMISIJA vs POTROŠNJA (~0.92–0.96):
+   CO2 emisija je jako visoko korelirana s potrošnjom goriva jer količina
+   emitiranog CO2 izravno ovisi o količini izgorenog goriva (kemija izgaranja).
+   Kombinirana potrošnja (L/100km) ima najjaču vezu s CO2 (r ≈ 0.961).
+
+3. ZAPREMNINA MOTORA i BROJ CILINDARA (~0.921):
+   Ove dvije veličine su jako korelirane – veći motor gotovo uvijek ima više
+   cilindara. Obje su umjereno korelirane s CO2 emisijom (~0.83–0.84).
+
+4. KOMBINIRANA POTROŠNJA (mpg) – NEGATIVNA KORELACIJA:
+   Potrošnja izražena u mpg (milje po galonu) je negativno korelirana s
+   ostalim varijablama potrošnje jer je inverzna mjera – veći mpg znači
+   manju potrošnju, pa je i korelacija s CO2 negativna (r ≈ -0.911).
+
+5. ZAKLJUČAK:
+   Najjači prediktor CO2 emisije je kombinirana potrošnja goriva (r ≈ 0.961),
+   što upućuje da bi linearni regresijski model s potrošnjom kao ulaznom
+   veličinom mogao dobro predviđati CO2 emisiju vozila.

@@ -1,0 +1,23 @@
+a) Pomoću histograma prikažite emisiju C02 plinova. Komentirajte dobiveni prikaz.
+Distribucija CO2 emisije je asimetrična udesno, većina vozila između 200–300 g/km, vidljivi outlieri iznad 500 g/km.
+
+
+b) Pomoću dijagrama raspršenja prikažite odnos između gradske potrošnje goriva i emisije
+C02 plinova. Komentirajte dobiveni prikaz. Kako biste bolje razumjeli odnose između
+veličina, obojite točkice na dijagramu raspršenja s obzirom na tip goriva.
+Jaka pozitivna linearna veza između gradske potrošnje i CO2. Etanol vozila (ružičasta) su jasno ispod trenda — visoka potrošnja u L/100km, ali niska CO2 emisija jer se mjeri samo fosilna komponenta.
+
+
+c) Pomoću kutijastog dijagrama prikažite razdiobu izvangradske potrošnje s obzirom na tip
+goriva. Primjećujete li grubu mjernu pogrešku u podacima?
+Gruba mjerna pogreška vidljiva je kod dizela (D) i premium benzina (Z) — na dijagramu su prisutne točkice izvan brkova koje predstavljaju outliere, tj. vozila čija izvangradska potrošnja značajno odskače od ostatka grupe.
+
+
+d) Pomoću stupčastog dijagrama prikažite broj vozila po tipu goriva. Koristite metodu
+groupby.
+Dominiraju regularni (X) i premium benzin (Z). Ostali tipovi goriva su marginalno zastupljeni.
+
+
+e) Pomoću stupčastog grafa prikažite na istoj slici prosječnu C02 emisiju vozila s obzirom na
+broj cilindara.
+Monoton rast prosječne CO2 emisije s brojem cilindara (184 → 568 g/km), fizikalno očekivano jer veći motori troše više goriva.
